@@ -11,10 +11,10 @@
 # 
 #### Standard SQL Format  
 `
-#standardSQL
-SELECT type, COUNT(*)
-FROM `bigquery-public-data.hacker_news.full` 
-GROUP BY type
+#standardSQL  
+SELECT type, COUNT(*)  
+FROM `bigquery-public-data.hacker_news.full`   
+GROUP BY type  
 `
 
 #### CLI SQL Format  
