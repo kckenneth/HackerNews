@@ -17,7 +17,7 @@ FROM `bigquery-public-data.hacker_news.full`
 GROUP BY type  
 ```
 
-#### CLI SQL Format  
+#### CLI Format  
 ```
 bq query --use_legacy_sql=false 'SELECT type, COUNT(*) as total_count FROM `bigquery-public-data.hacker_news.full` group by type'
 ```
@@ -31,3 +31,5 @@ bq query --use_legacy_sql=false 'SELECT type, COUNT(*) as total_count FROM `bigq
 | pollopt |       11909 |
 | poll    |        1738 |
 |---------|-------------|
+
+There are 5 types of texts.  
