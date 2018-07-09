@@ -22,7 +22,7 @@ GROUP BY type
 bq query --use_legacy_sql=false 'SELECT type, COUNT(*) as total_count FROM `bigquery-public-data.hacker_news.full` group by type'
 `
 
-|---------|-------------|
+
 |  type   | total_count |
 |---------|-------------|
 | comment |    14136753 |
