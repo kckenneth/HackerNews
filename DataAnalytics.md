@@ -1,5 +1,5 @@
-|Date | July 9, 2018 |
+|Data | HackerNews |
 |---------|-------------|
 |Author | Kenneth Chen, PhD|
-|Data | HackerNews |
 |Platform | GCP BigQuery |
+|Date | July 9, 2018 |
