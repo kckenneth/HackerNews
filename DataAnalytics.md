@@ -10,17 +10,17 @@
 
 # 
 #### Standard SQL Format  
-`
+```
 #standardSQL  
 SELECT type, COUNT(*)  
 FROM `bigquery-public-data.hacker_news.full`   
 GROUP BY type  
-`
+```
 
 #### CLI SQL Format  
-`
+```
 bq query --use_legacy_sql=false 'SELECT type, COUNT(*) as total_count FROM `bigquery-public-data.hacker_news.full` group by type'
-`
+```
 
 
 |  type   | total_count |
