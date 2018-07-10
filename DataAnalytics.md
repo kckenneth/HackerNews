@@ -13,12 +13,13 @@ SELECT COUNT(*)
 FROM `bigquery-public-data.hacker_news.full` 
 ```
 
+```
 +------------+
 | Total_News |
 +------------+
 |   17108307 |
 +------------+
-
+```
 
 # Types of Texts
 #### Standard SQL Format  
