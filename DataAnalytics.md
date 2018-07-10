@@ -6,9 +6,21 @@
 
 # Summary
 
+# Number of Rows
+```
+#standardSQL
+SELECT COUNT(*)
+FROM `bigquery-public-data.hacker_news.full` 
+```
+
++------------+
+| Total_News |
++------------+
+|   17108307 |
++------------+
 
 
-# 
+# Types of Texts
 #### Standard SQL Format  
 ```
 #standardSQL  
@@ -34,6 +46,28 @@ bq query --use_legacy_sql=false 'SELECT type, COUNT(*) as total_count FROM `bigq
 
 There are 5 types of texts.  
 
+# Number of Users
+#### Standard SQL Format  
+```
+#standardSQL
+SELECT COUNT(DISTINCT t1.by)
+FROM `bigquery-public-data.hacker_news.full` as t1
+```
 
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<p:sld xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main"><p:cSld><p:spTree><p:nvGrpSpPr><p:cNvPr id="1" name=""/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr><p:grpSpPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="0" cy="0"/><a:chOff x="0" y="0"/><a:chExt cx="0" cy="0"/></a:xfrm></p:grpSpPr><p:sp><p:nvSpPr><p:cNvPr id="2" name="Title 1"/><p:cNvSpPr><a:spLocks noGrp="1"/></p:cNvSpPr><p:nvPr><p:ph type="ctrTitle"/></p:nvPr></p:nvSpPr><p:spPr/><p:txBody><a:bodyPr/><a:lstStyle/><a:p><a:r><a:rPr lang="en-US" dirty="0" err="1" smtClean="0"/><a:t>Nanobodies</a:t></a:r><a:r><a:rPr lang="en-US" dirty="0" smtClean="0"/><a:t> purification</a:t></a:r><a:endParaRPr lang="en-US" dirty="0"/></a:p></p:txBody></p:sp><p:sp><p:nvSpPr><p:cNvPr id="3" name="Subtitle 2"/><p:cNvSpPr><a:spLocks noGrp="1"/></p:cNvSpPr><p:nvPr><p:ph type="subTitle" idx="1"/></p:nvPr></p:nvSpPr><p:spPr/><p:txBody><a:bodyPr/><a:lstStyle/><a:p><a:endParaRPr lang="en-US"/></a:p></p:txBody></p:sp></p:spTree><p:extLst><p:ext uri="{BB962C8B-B14F-4D97-AF65-F5344CB8AC3E}"><p14:creationId xmlns:p14="http://schemas.microsoft.com/office/powerpoint/2010/main" val="1267037023"/></p:ext></p:extLst></p:cSld><p:clrMapOvr><a:masterClrMapping/></p:clrMapOvr></p:sld>
+#### CLI Format  
+```
+bq query --use_legacy_sql=false 'SELECT COUNT(DISTINCT t1.by) as Number_of_Users FROM `bigquery-public-data.hacker_news.full` t1'
+```
+
++-----------------+
+| Number_of_Users |
++-----------------+
+|          524637 |
++-----------------+
+
+**Note**  
+Since the user column was labeled as 'by', to avoid the clash, I named the table as t1 and called the user number by t1.by
+
+# Summary
+There are 17,108,307 news and 524,637 users on HackerNews. 
+
