@@ -92,9 +92,6 @@ bq query --use_legacy_sql=false 'SELECT COUNT(DISTINCT t1.by) as Number_of_Users
 +-----------------+
 ```
 
-**Note**  
-Since the user column was labeled as 'by', to avoid the clash, I named the table as t1 and called the user number by t1.by
-
 ```
 #standardSQL
 SELECT t1.by as User, COUNT(*) as total_post
@@ -156,4 +153,10 @@ I found the top most commenter **tptacek** posts reduced from 45,249 to 44,879, 
 
 # Summary
 There are 17,108,307 news and 524,637 users on HackerNews. The user named 'tptacek' commented 45,249 posts, which is the highest posts in our data analysis.
+
+**Note**  
+Since the user column was labeled as 'by', to avoid the clash, I named the table as t1 and called the user number by t1.by.  
+In text column, there are empty rows, not **NULL** row. In order to remove those rows in my counting mode, I used t1.text <> "".
+
+
 
