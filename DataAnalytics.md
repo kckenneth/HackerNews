@@ -59,11 +59,12 @@ FROM `bigquery-public-data.hacker_news.full` as t1
 bq query --use_legacy_sql=false 'SELECT COUNT(DISTINCT t1.by) as Number_of_Users FROM `bigquery-public-data.hacker_news.full` t1'
 ```
 
-+-----------------+
+```
 | Number_of_Users |
 +-----------------+
 |          524637 |
 +-----------------+
+```
 
 **Note**  
 Since the user column was labeled as 'by', to avoid the clash, I named the table as t1 and called the user number by t1.by
