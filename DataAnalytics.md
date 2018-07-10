@@ -6,6 +6,30 @@
 
 # Summary
 
+# Query commands
+For standard SQL in BigQuery, use 
+```
+#standardSQL
+SELECT
+FROM
+```
+
+For SQL query from CLI, don't use any of the hash comment
+```
+# From the CLI window
+bq query --use_legacy_sql=false 'SELECT FROM `table`'
+
+# In jupyter notebook
+!bq query --use_legacy_sql=false 'SELECT FROM `table`'
+
+# To return 1 millions rows if necessary 
+bq query --use_legacy_sql=false --max_rows=1000000 'SELECT FROM `table`' 
+
+# To save the result in csv file
+bq query --use_legacy_sql=false --max_rows=1000000 --format=csv 'SELECT FROM `table`' > myfile.csv
+```
+
+
 # Number of Rows
 ```
 #standardSQL
