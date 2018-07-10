@@ -99,8 +99,8 @@ bq query --use_legacy_sql=false 'SELECT t1.by as User, COUNT(*) as total_post FR
 | mikeash      |      17968 |
 +--------------+------------+
 ```
-
+The user who 
 
 # Summary
-There are 17,108,307 news and 524,637 users on HackerNews. 
+There are 17,108,307 news and 524,637 users on HackerNews. The 
 
