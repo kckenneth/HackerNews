@@ -28,13 +28,13 @@ FROM `bigquery-public-data.hacker_news.full`
 SELECT type, COUNT(*)  
 FROM `bigquery-public-data.hacker_news.full`   
 GROUP BY type  
-```
 
 #### CLI Format  
-```
+
 bq query --use_legacy_sql=false 'SELECT type, COUNT(*) as total_count FROM `bigquery-public-data.hacker_news.full` group by type'
-```
-```
+
+#### Result 
+
 +---------+-------------+
 |  type   | total_count |
 +---------+-------------+
@@ -77,7 +77,29 @@ SELECT t1.by as User, COUNT(*) as total_post
 FROM `bigquery-public-data.hacker_news.full` as t1 
 GROUP BY t1.by
 ORDER BY total_post DESC
+
+# CLI format
+
+bq query --use_legacy_sql=false 'SELECT t1.by as User, COUNT(*) as total_post FROM `bigquery-public-data.hacker_news.full` as t1 GROUP BY t1.by ORDER BY total_post DESC LIMIT 10'
+
+# Result
+
++--------------+------------+
+|     User     | total_post |
++--------------+------------+
+|              |     541464 |
+| tptacek      |      45249 |
+| jacquesm     |      34156 |
+| dragonwriter |      24017 |
+| rbanffy      |      23957 |
+| dang         |      21636 |
+| DanBC        |      20514 |
+| pjmlp        |      19083 |
+| icebraining  |      18056 |
+| mikeash      |      17968 |
++--------------+------------+
 ```
+
 
 # Summary
 There are 17,108,307 news and 524,637 users on HackerNews. 
