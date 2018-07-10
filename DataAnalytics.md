@@ -99,8 +99,8 @@ bq query --use_legacy_sql=false 'SELECT t1.by as User, COUNT(*) as total_post FR
 | mikeash      |      17968 |
 +--------------+------------+
 ```
-The user who 
+The user named 'tptacek' commented 45,249 posts, which is the highest posts in our data analysis. 
 
 # Summary
-There are 17,108,307 news and 524,637 users on HackerNews. The 
+There are 17,108,307 news and 524,637 users on HackerNews. The user named 'tptacek' commented 45,249 posts, which is the highest posts in our data analysis.
 
