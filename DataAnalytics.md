@@ -34,17 +34,17 @@ GROUP BY type
 ```
 bq query --use_legacy_sql=false 'SELECT type, COUNT(*) as total_count FROM `bigquery-public-data.hacker_news.full` group by type'
 ```
-
-
+```
++---------+-------------+
 |  type   | total_count |
-|---------|-------------|
++---------+-------------+
 | comment |    14136753 |
 | story   |     2947287 |
 | job     |       10620 |
 | pollopt |       11909 |
 | poll    |        1738 |
-|---------|-------------|
-
++---------+-------------+
+```
 There are 5 types of texts.  
 
 # Number of Users
@@ -61,6 +61,7 @@ bq query --use_legacy_sql=false 'SELECT COUNT(DISTINCT t1.by) as Number_of_Users
 ```
 
 ```
++-----------------+
 | Number_of_Users |
 +-----------------+
 |          524637 |
