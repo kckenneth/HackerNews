@@ -71,6 +71,14 @@ bq query --use_legacy_sql=false 'SELECT COUNT(DISTINCT t1.by) as Number_of_Users
 **Note**  
 Since the user column was labeled as 'by', to avoid the clash, I named the table as t1 and called the user number by t1.by
 
+```
+#standardSQL
+SELECT t1.by as User, COUNT(*) as total_post
+FROM `bigquery-public-data.hacker_news.full` as t1 
+GROUP BY t1.by
+ORDER BY total_post DESC
+```
+
 # Summary
 There are 17,108,307 news and 524,637 users on HackerNews. 
 
